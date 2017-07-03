@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Hello URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,10 +17,16 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from . import view
-
+from . import view, testdb, search, search2
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello$', view.hello),
+    url(r'^testdb0$', testdb.testdb0),
+    url(r'^testdb1$', testdb.testdb1),
+    url(r'^testdb2$', testdb.testdb2),
+    url(r'^testdb3$', testdb.testdb3),
+    url(r'^search-form$', search.search_form),
+    url(r'^search$', search.search),
+    url(r'^search-post$', search2.search_post),
 ]
